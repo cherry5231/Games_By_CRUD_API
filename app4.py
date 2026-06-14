@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask
 from pathlib import Path
 import json
 
@@ -11,7 +11,14 @@ def home():
     with open(file_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    return app.response_class(
-        response=json.dumps(data, indent=4),
-        mimetype="application/json"
-    )
+    return f"""
+    <html>
+    <head>
+        <title>Games API</title>
+    </head>
+    <body>
+        <h2>Games Data</h2>
+        <pre>{json.dumps(data, indent=4, ensure_ascii=False)}</pre>
+    </body>
+    </html>
+    """
