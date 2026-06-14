@@ -7,6 +7,9 @@ app = Flask(__name__)
 
 GAMES_FILE = "games.json"
 
+@app.route("/")
+def home():
+    return "Game API is running!"
 
 def load_games():
     if not os.path.exists(GAMES_FILE):
