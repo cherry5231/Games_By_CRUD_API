@@ -4,6 +4,7 @@ import json
 
 app = Flask(__name__)
 
+
 @app.route("/")
 def home():
     file_path = Path(__file__).resolve().parent / "games.json"
@@ -11,14 +12,21 @@ def home():
     with open(file_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    return f"""
-    <html>
-    <head>
-        <title>Games API</title>
-    </head>
-    <body>
-        <h2>Games Data</h2>
-        <pre>{json.dumps(data, indent=4, ensure_ascii=False)}</pre>
-    </body>
-    </html>
-    """
+    html = "<h1>🎮 Games Database</h1>"
+
+    for game_name, info in data.items():
+        html += f"""
+        <div style="
+            border:1px solid #ccc;
+            padding:10px;
+            margin:10px;
+            border-radius:10px;
+        ">
+            <h2>{game_name}</h2>
+            <p><b>Engine:</b> {info.get('Engine')}</p>
+            <p><b>Release Year:</b> {info.get('Release_year')}</p>
+            <p><b>Company:</b> {info.get('Company')}</p>
+        </div>
+        """
+
+    return html
