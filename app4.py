@@ -26,6 +26,7 @@ def home():
             <p><b>Engine:</b> {info.get('Engine')}</p>
             <p><b>Release Year:</b> {info.get('Release_year')}</p>
             <p><b>Company:</b> {info.get('Company')}</p>
+             <p><b>MajorSourceCode:</b> {info.get('Major Source Code')}</p>
         </div>
         """
 
