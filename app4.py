@@ -11,4 +11,7 @@ def home():
     with open(file_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    return jsonify(data)
+    return app.response_class(
+        response=json.dumps(data, indent=4),
+        mimetype="application/json"
+    )
