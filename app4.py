@@ -75,7 +75,7 @@ def home():
             <div class="info">
                 <b>Engine:</b> {info.get('Engine')}<br>
                 <b>Year:</b> {info.get('Release_year')}<br>
-                <b>Company:</b> {info.get('Company')}
+                <b>Company:</b> {info.get('Company')}<br>
                  <b>Major Source Code:</b> {info.get('Major Source Code')}
             </div>
         </div>
