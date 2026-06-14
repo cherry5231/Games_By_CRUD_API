@@ -1,7 +1,7 @@
 # Games_By_CRUD_API
 
 
-#  Games Information API (Flask + Vercel)
+
 
 A simple backend project built using **Flask** that serves structured game data from a local JSON file and displays it through a clean web interface. Deployed using **Vercel serverless platform**.
 
